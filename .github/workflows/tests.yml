@@ -1,0 +1,40 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip ruff "coverage[toml]"
+      - name: Lint
+        run: ruff check .
+      - name: Tests with coverage (fails under 90%)
+        run: |
+          python -m py_compile web_delta_feed.py
+          coverage run -m unittest discover -s tests -v
+          coverage report --fail-under=90
+      - name: Example report is reproduced
+        run: |
+          python web_delta_feed.py examples/before.txt examples/after.txt \
+            --source-label "Example status page" \
+            --source-url "https://example.test/status" \
+            --question "Has the release changed or maintenance been scheduled?" \
+            --before-captured-at "2026-09-28T09:00:00Z" \
+            --after-captured-at "2026-09-30T09:00:00Z" \
+            --focus-term release --focus-term maintenance > "$RUNNER_TEMP/report.json"
+          cmp "$RUNNER_TEMP/report.json" examples/example-report.json
+      - name: pip install and run the console script
+        run: |
+          python -m pip install .
+          cd "$RUNNER_TEMP"
+          web-delta-feed --version
+          web-delta-feed "$GITHUB_WORKSPACE/examples/before.txt" "$GITHUB_WORKSPACE/examples/after.txt" \
+            --source-label "CI" --question "Anything changed?" \
+            --before-captured-at t0 --after-captured-at t1 --focus-term release --output ci-report.json
+          python -c "import json; r = json.load(open('ci-report.json')); assert r['change']['has_changes'] is True"
