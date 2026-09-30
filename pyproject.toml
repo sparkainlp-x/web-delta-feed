@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "web-delta-feed"
+dynamic = ["version"]
+description = "Offline, stdlib-only comparison of two saved UTF-8 text snapshots into a deterministic JSON report of added/removed lines; never fetches URLs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE"]
+authors = [{ name = "Jean-François Brisson" }]
+keywords = ["diff", "text-snapshots", "change-detection", "json", "offline"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/sparkainlp-x/web-delta-feed"
+
+[project.scripts]
+web-delta-feed = "web_delta_feed:main"
+
+[tool.setuptools]
+py-modules = ["web_delta_feed"]
+
+[tool.setuptools.dynamic]
+version = { attr = "web_delta_feed.__version__" }
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.coverage.run]
+branch = true
+include = ["web_delta_feed.py"]
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
