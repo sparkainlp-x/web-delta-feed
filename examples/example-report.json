@@ -1,0 +1,43 @@
+{
+  "after": {
+    "captured_at": "2026-09-30T09:00:00Z",
+    "sha256": "c21d4c9752b2d46149675d5f969d4b89e67bd6063f7bb9606dbabbd99274a270"
+  },
+  "before": {
+    "captured_at": "2026-09-28T09:00:00Z",
+    "sha256": "bea755643b54535691c7b36b91cf8c337a4a1bd5f5104f3c1310c4103f6a7440"
+  },
+  "change": {
+    "added_lines": [
+      "Release 2.5.0",
+      "Maintenance scheduled for 02:00 UTC."
+    ],
+    "has_changes": true,
+    "removed_lines": [
+      "Release 2.4.0"
+    ]
+  },
+  "focus_term_matches": [
+    {
+      "after_lines": [
+        "Release 2.5.0"
+      ],
+      "before_lines": [
+        "Release 2.4.0"
+      ],
+      "term": "release"
+    },
+    {
+      "after_lines": [
+        "Maintenance scheduled for 02:00 UTC."
+      ],
+      "before_lines": [],
+      "term": "maintenance"
+    }
+  ],
+  "source": {
+    "label": "Example status page",
+    "url": "https://example.test/status"
+  },
+  "tracked_question": "Has the release changed or maintenance been scheduled?"
+}
