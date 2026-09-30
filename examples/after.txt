@@ -1,0 +1,5 @@
+# Service Status
+Release 2.5.0
+All systems operational.
+Maintenance scheduled for 02:00 UTC.
+Contact support@example.test
