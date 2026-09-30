@@ -1,5 +1,6 @@
 # Web Delta Feed
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23069164.svg)](https://doi.org/10.5281/zenodo.23069164)
 [![tests](https://github.com/sparkainlp-x/web-delta-feed/actions/workflows/tests.yml/badge.svg)](https://github.com/sparkainlp-x/web-delta-feed/actions/workflows/tests.yml)
 
 A compact, offline prototype for comparing two **already-saved UTF-8 text snapshots**. It reads local files only: a supplied source URL is recorded as metadata and is never fetched, and the program does not poll, monitor, or start a service. HTML input is intentionally unsupported; save or extract the relevant content as plain text before comparing it.
