@@ -1,0 +1,35 @@
+{
+  "upload_type": "software",
+  "title": "Web Delta Feed",
+  "description": "<p>Offline, standard-library-only prototype that compares two already-saved UTF-8 text snapshots and writes a deterministic JSON report of exact added and removed lines, SHA-256 hashes of the bytes read, and literal focus-term matches; it never fetches the recorded source URL and does not interpret changes.</p>",
+  "creators": [
+    {
+      "name": "Brisson, Jean-François",
+      "affiliation": "Spark AI NLP",
+      "orcid": "0009-0000-9778-5374"
+    }
+  ],
+  "access_right": "open",
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "diff",
+    "text-snapshots",
+    "change-detection",
+    "json",
+    "offline",
+    "research software"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/sparkainlp-x/web-delta-feed",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "language": "eng",
+  "communities": [
+    {
+      "identifier": "spark-ai-nlp"
+    }
+  ]
+}
