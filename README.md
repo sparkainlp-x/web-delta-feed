@@ -88,7 +88,7 @@ Web Delta Feed is a small, dependency-free, offline step for recording what chan
 
 ## Citation
 
-See [CITATION.cff](CITATION.cff).
+See [CITATION.cff](CITATION.cff). Archived on Zenodo: concept DOI [10.5281/zenodo.23069164](https://doi.org/10.5281/zenodo.23069164) (all versions); v1.0.1: [10.5281/zenodo.23241552](https://doi.org/10.5281/zenodo.23241552).
 
 ## License
 

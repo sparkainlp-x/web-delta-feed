@@ -10,6 +10,13 @@ authors:
     affiliation: "Spark AI NLP"
 version: 1.0.1
 date-released: "2026-10-08"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23069164
+    description: "Concept DOI (all versions)"
+  - type: doi
+    value: 10.5281/zenodo.23241552
+    description: "Version DOI for v1.0.1"
 license: AGPL-3.0-only
 repository-code: "https://github.com/sparkainlp-x/web-delta-feed"
 abstract: "Offline, standard-library-only prototype that compares two already-saved UTF-8 text snapshots and writes a deterministic JSON report of exact added and removed lines, SHA-256 hashes of the bytes read, and literal focus-term matches; it never fetches the recorded source URL and does not interpret changes."
