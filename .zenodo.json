@@ -1,7 +1,9 @@
 {
   "upload_type": "software",
-  "title": "Web Delta Feed",
-  "description": "<p>Offline, standard-library-only prototype that compares two already-saved UTF-8 text snapshots and writes a deterministic JSON report of exact added and removed lines, SHA-256 hashes of the bytes read, and literal focus-term matches; it never fetches the recorded source URL and does not interpret changes.</p>",
+  "title": "Web Delta Feed: reproducible comparison reports for two saved text snapshots",
+  "version": "1.0.1",
+  "publication_date": "2026-10-08",
+  "description": "<p>Web Delta Feed compares two already-saved UTF-8 text snapshots and writes a deterministic JSON report: source label and optional URL, the question being tracked, capture timestamps and SHA-256 hashes for both files, the exact added and removed lines, and case-insensitive matches for literal focus terms. Line alignment uses a patience-style diff with a standard-library fallback. Reports are byte-for-byte reproducible, written atomically and, on POSIX systems, readable only by their owner.</p><p>Scope: the program never fetches the URL, polls or monitors anything, and does not accept HTML. A changed line is reported, not interpreted; hashes show whether a saved file later changed, not that it is authentic or came from the labelled source.</p><p>Usage: Python 3.10 or later, standard library only; <code>pip install .</code> adds a <code>web-delta-feed</code> command. Run <code>python3 web_delta_feed.py examples/before.txt examples/after.txt ...</code> as shown in the README. Tests: <code>python3 -m unittest discover -s tests -v</code> (run in CI on Python 3.10 to 3.13 with coverage).</p><p>Citation: cite the concept DOI <a href=\"https://doi.org/10.5281/zenodo.23069164\">10.5281/zenodo.23069164</a> for all versions, or the version DOI of the release you used. Source code: <a href=\"https://github.com/sparkainlp-x/web-delta-feed\">github.com/sparkainlp-x/web-delta-feed</a>. Licence: AGPL-3.0-only; commercial licensing is available (see COMMERCIAL-LICENSE.md).</p>",
   "creators": [
     {
       "name": "Brisson, Jean-François",
@@ -12,11 +14,13 @@
   "access_right": "open",
   "license": "AGPL-3.0-only",
   "keywords": [
-    "diff",
-    "text-snapshots",
-    "change-detection",
-    "json",
+    "change detection",
+    "text diff",
+    "snapshots",
+    "provenance",
+    "reproducible reports",
     "offline",
+    "Python",
     "research software"
   ],
   "related_identifiers": [
@@ -31,5 +35,6 @@
     {
       "identifier": "spark-ai-nlp"
     }
-  ]
+  ],
+  "notes": "Evidence status: SYNTHETIC example data; no field performance is claimed. Commercial licensing: see COMMERCIAL-LICENSE.md."
 }

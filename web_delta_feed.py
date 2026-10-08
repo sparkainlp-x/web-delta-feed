@@ -25,7 +25,7 @@ from collections.abc import Iterable, Sequence
 from pathlib import Path
 from typing import Any
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 # Upper bound on each snapshot's size. Line diffs are not linear-time in the worst
 # case, and this tool is meant for saved text pages, not bulk data.
